@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  let Animal = sequelize.define("Animal", {
+  const Animal = sequelize.define("Animal", {
     animalType: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -32,5 +32,20 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
+    Animal.associate = function(models) {
+    // We're saying that a Animal should belong to an Field
+    // A Animal can't be created without an Field due to the foreign key constraint
+    Animal.belongsTo(models.Field, {
+      foreignKey: {
+        allowNull: true
+      }
+    });
+  };
   return Animal;
 };
+
+
+
+
+
+
