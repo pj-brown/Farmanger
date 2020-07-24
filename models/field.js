@@ -1,23 +1,36 @@
 module.exports = function(sequelize, DataTypes) {
     const Field = sequelize.define("Field", {
-    //   animalType: {
-    //     type: DataTypes.STRING,
-    //     allowNull: false,
-    //     notEmpty: true,
-    //     validate: {
-    //       len: [1]
-    //     }
-    //   }
+      fieldName: {
+        type: DataTypes.STRING,
+        allowNull: false
+      },
+      acreage: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        isNumeric: true
+      },
+      note: {
+        type: DataTypes.STRING,
+        allowNull: true
+      }
+      // datePlanted:{
+      //   type: 
+      // },
+      // harvestDate:{
+
+      // },
+      // timestamps: false
     });
-  Field.associate = function(models) {
-    // Associating Field with Animal & Crop
-    // When an Field is deleted, also delete any associated Animal & Crop
-    Field.hasMany(models.Animal, {
-        onDelete: 'RESTRICT',
-        onUpdate: 'SET NULL'
-    });
-  };
-    return Field;
+    Field.associate = function(models) {
+      // We're saying that a Field should belong to an Crop
+      // A Field can't be created without an Crop due to the foreign key constraint
+      Field.belongsTo(models.Crop, {
+        foreignKey: {
+          allowNull: false
+        }
+      });
+    };
+  return Field;
 };
   
   
