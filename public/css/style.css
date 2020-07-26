@@ -1,0 +1,16 @@
+body {
+    background-image: url(../assets/farm_background_grass.jpg);
+    background-color: #cccccc; /* Used if the image is unavailable */
+    height: 750px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+.navbar {
+    background-color: green;
+}
+
+table tr td, table tr th{
+    background-color: rgba(48, 49, 0, 0.3) !important;
+}
