@@ -1,6 +1,13 @@
 $(document).ready(function() {
 
-    // on lick listeners for nav bar buttons
+    // jquery references for inputs for adding crop
+    let cropNameInput = $("#cropNameInput");
+    let growTimeInput = $("#growTimeInput");
+    let plantingRangeInput = $("#plantingRangeInput");
+    let cropForm = $("#cropForm")
+
+
+    // on lick listeners for save buttons in modals
     $(document).on("click", "#add-crop", getCropPage);
     $(document).on("click", "#add-field", getFieldPage);
 
@@ -15,8 +22,11 @@ $(document).ready(function() {
     }
 
     // // call getCrops() to get crops
-    // getCrops();
+    const getCrops = () => {
+        return $.ajax({
 
+        })
+    }
     // // function to get crops from api
     // function getCrops() {
     //     $.get("/api/crops", renderCropList);
