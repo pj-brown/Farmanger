@@ -4,10 +4,11 @@ $(document).ready(function() {
     let cropNameInput = $("#cropNameInput");
     let growTimeInput = $("#growTimeInput");
     let plantingRangeInput = $("#plantingRangeInput");
-    let cropForm = $("#cropForm")
+    let cropContainer = $("#crop-container");
+    let cropBody = $("#crop-body")
 
 
-    // on lick listeners for save buttons in modals
+    // on lick listeners for save buttons in modals to call corresponding page functions
     $(document).on("click", "#add-crop", getCropPage);
     $(document).on("click", "#add-field", getFieldPage);
 
@@ -20,20 +21,29 @@ $(document).ready(function() {
     function getFieldPage() {
         window.location.href = "../html/fields.html"
     }
+// ----------------------------------------------------------------------------------------------------------------------------------------------------------
+    // getting existing crops
+    getCrops();
 
-    // // call getCrops() to get crops
-    const getCrops = () => {
-        return $.ajax({
+    // TODO: function for creating a new table row for crops
+    function createCropRow(cropData) {
 
-        })
     }
-    // // function to get crops from api
-    // function getCrops() {
-    //     $.get("/api/crops", renderCropList);
-    // }
 
-    // // function to render crops to table
-    // function renderCropList(crop) {
-    //     let 
-    // }
+    // TODO: function to get existing crops
+    function getCrops(data) {
+        $.get("/api/crops", function(data) {
+            console.log(data);
+            let rowsToAdd = [];
+            for (let i = 0; i < data.length; i++) {
+                rowsToAdd.push(createCropRow(data[i]));                
+            }
+            renderCropList(rowsToAdd);
+            cropNameInput.val("");
+            growTimeInput.val(""); // this is an iteger...
+            plantingRangeInput.val("");
+
+        });
+    }
+
 });
