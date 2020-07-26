@@ -23,14 +23,83 @@
                   <a class="dropdown-item" href="#!">NW Field (placeholder/put field name here)</a>
                   <a class="dropdown-item" href="#!">SW Field (placeholder/put field name here)</a>
                 </div>
-              </div>
-            <button type="button" class="btn btn-secondary" id="add-field">Add a field</button>
-            <button type="button" class="btn btn-secondary" id="add-crop">Add a crop</button>
-          </div>
+            </div>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#fieldModal">Add a field</button>
+              <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>          
+        </div>
     </nav>
     
     <div class="container">
     <!-- Content here -->
+    </div>
+
+    <!-- Modal to add crops-->
+    <div class="modal fade" id="cropModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a crop</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="cropNameInput">Crop Name</label>
+                <input type="text" class="form-control" id="cropNameInput" placeholder="Enter a crop name here">
+              </div>
+              <div class="form-group">
+                <label for="growTimeInput">Grow Time</label>
+                <input type="text" class="form-control" id="growTimeInput" placeholder="Enter a number for approximate days to grow">
+              </div>
+              <div class="form-group">
+                <label for="plantingRangeInput">Planting Range</label>
+                <input type="text" class="form-control" id="plantingRangeInput" placeholder="What is the planting range?">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Check this box if crop requires irrigation
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add-crop">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="fieldModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a field</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="cropNameInput">Field Name</label>
+                <input type="text" class="form-control" id="cropNameInput" placeholder="Enter a field name here">
+              </div>
+              <div class="form-group">
+                <label for="growTimeInput">Acreage</label>
+                <input type="text" class="form-control" id="growTimeInput" placeholder="How many acres will the field be comprised of?">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add-field">Save</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
