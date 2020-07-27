@@ -14,12 +14,12 @@ $(document).ready(function() {
 
     // goes to the crop page
     function getCropPage() {
-        window.location.href = "../html/crops.html"
+        window.location.href = "../crops.html"
     }
 
     // goes to the field page
     function getFieldPage() {
-        window.location.href = "../html/fields.html"
+        window.location.href = "../fields.html"
     }
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
     // getting existing crops
@@ -36,8 +36,10 @@ $(document).ready(function() {
             console.log(data);
             let rowsToAdd = [];
             for (let i = 0; i < data.length; i++) {
+                console.log(data[i]);
                 rowsToAdd.push(createCropRow(data[i]));                
             }
+            console.log(rowsToAdd);
             renderCropList(rowsToAdd);
             cropNameInput.val("");
             growTimeInput.val(""); // this is an iteger...
@@ -45,5 +47,4 @@ $(document).ready(function() {
 
         });
     }
-
 });

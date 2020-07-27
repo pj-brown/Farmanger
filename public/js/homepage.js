@@ -4,11 +4,11 @@ $(document).ready(function() {
     $(document).on("click", "#add-field", getFieldPage);
 
     function getCropPage() {
-        window.location.href = "../html/crops.html"
+        window.location.href = "./crops.html"
     }
 
     function getFieldPage() {
-        window.location.href = "../html/fields.html"
+        window.location.href = "./fields.html"
     }
 
 

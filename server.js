@@ -20,13 +20,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Static directory
-// app.use(express.static("public"));
+app.use(express.static("public"));
 
 // Routes
 // =============================================================
 require("./routes/crop-api-routes.js")(app);
 require("./routes/field-api-routes.js")(app);
-// require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
