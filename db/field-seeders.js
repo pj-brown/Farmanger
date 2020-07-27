@@ -2,7 +2,7 @@
 
 module.exports = {
     up: (queryInterface, Sequelize) => {
-      return queryInterface.bulkInsert("Fields", [
+      return queryInterface.bulkInsert("Field", [
         {
             fieldName: "Northwest field",
             acreage: 2,
@@ -21,6 +21,6 @@ module.exports = {
     },
   
     down: (queryInterface, Sequelize) => {
-      return queryInterface.bulkDelete("Fields", null, {});
+      return queryInterface.bulkDelete("Field", null, {});
     }
   };

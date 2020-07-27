@@ -8,27 +8,30 @@ $(document).ready(function() {
     let cropBody = $("#crop-body")
 
 
-    // on lick listeners for save buttons in modals to call corresponding page functions
-    $(document).on("click", "#add-crop", getCropPage);
-    $(document).on("click", "#add-field", getFieldPage);
+    // on lick listeners for save buttons in modals
+    // $(document).on("click", "#add-crop", addCrop);
+    // $(document).on("click", "#add-field", addField);
+    // listeners for page direct (manage crop/field)
+    $(document).on("click", "#crop-page", getCropPage);
+    $(document).on("click", "#field-page", getFieldPage);
 
     // goes to the crop page
     function getCropPage() {
-        window.location.href = "../crops.html"
+        window.location.href = "./crops.html";
+        getCrops();
     }
 
     // goes to the field page
     function getFieldPage() {
-        window.location.href = "../fields.html"
+        window.location.href = "./fields.html"
     }
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
     // getting existing crops
-    getCrops();
-
+    
     // TODO: function for creating a new table row for crops
-    function createCropRow(cropData) {
+    // function createCropRow(cropData) {
 
-    }
+    // }
 
     // TODO: function to get existing crops
     function getCrops(data) {
@@ -47,4 +50,13 @@ $(document).ready(function() {
 
         });
     }
+
+    // // TODO: function to add crop
+    // function addCrop () {
+
+    // }
+    // // TODO: function to add field
+    // function addField () {
+
+    // }
 });

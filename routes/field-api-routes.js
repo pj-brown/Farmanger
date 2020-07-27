@@ -10,7 +10,8 @@ module.exports = function(app) {
     })
     .then(function(dbField) {
       res.json(dbField);
-    });
+    })
+    .catch(err => res.json(err));
   });
 
   app.get("/api/fields/:id", function(req, res) {
@@ -25,13 +26,16 @@ module.exports = function(app) {
     })
     .then(function(dbField) {
       res.json(dbField);
-    });
+    })
+    .catch(err => res.json(err));
   });
 
   app.post("/api/fields", function(req, res) {
-    db.Field.create(req.body).then(function(dbField) {
+    db.Field.create(req.body)
+    .then(function(dbField) {
       res.json(dbField);
-    });
+    })
+    .catch(err => res.json(err));
   });
 
   app.put("/api/fields", function(req, res) {
@@ -43,7 +47,8 @@ module.exports = function(app) {
       })
       .then(function(dbField) {
           res.json(dbField);
-      });
+      })
+      .catch(err => res.json(err));
   });
 
   app.delete("/api/fields/:id", function(req, res) {
@@ -54,7 +59,8 @@ module.exports = function(app) {
     })
     .then(function(dbField) {
       res.json(dbField);
-    });
+    })
+    .catch(err => res.json(err));
   });
 
 };

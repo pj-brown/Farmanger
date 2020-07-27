@@ -5,30 +5,21 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <script src="https://kit.fontawesome.com/43102f6d14.js" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="./css/style.css" rel="stylesheet">
   </head>
   <body>
-    <nav class="navbar sticky-top navbar-dark bg-primary">
-        <a class="navbar-brand" href="#!">Farmanger</a>
-        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
-            <div class="btn-group" role="group">
-                <button id="btnGroupDrop1" type="button"
-                        class="btn btn-secondary dropdown-toggle"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Manage Fields
-                </button>
-                <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                  <a class="dropdown-item" href="#!">NW Field (placeholder/put field name here)</a>
-                  <a class="dropdown-item" href="#!">SW Field (placeholder/put field name here)</a>
-                </div>
-              </div>
-            <button type="button" class="btn btn-secondary">Add a field</button>
-            <button type="button" class="btn btn-secondary">Add a crop</button>
+    <nav class="navbar sticky-top navbar-dark">
+      <a class="navbar-brand font-weight-bold" href="index.html"><i class="fas fa-tractor"></i> Farmanger</a>
+      <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
+          <div class="btn-group" role="group">
+            <button type="button" class="btn btn-secondary" id="field-page">Manage Fields</button>
+            <button type="button" class="btn btn-secondary" id="crop-page">Manage Crops</button>
           </div>
-    </nav>
+      </div>
+  </nav>
     
     <div class="container" id="crop-container">
       <table class="table table-hover">
@@ -59,11 +50,55 @@
             </td>                    
           </tr>
         </tbody>
-      </table>    </div>
+      </table>    
+    </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>          
+
+
+    <!-- Modal to add crops-->
+    <div class="modal fade" id="cropModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Add a crop</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <form id="cropForm">
+              <div class="form-group">
+                <label for="cropNameInput">Crop Name</label>
+                <input type="text" class="form-control" id="cropNameInput" placeholder="Enter a crop name here">
+              </div>
+              <div class="form-group">
+                <label for="growTimeInput">Grow Time</label>
+                <input type="text" class="form-control" id="growTimeInput" placeholder="Enter a number for approximate days to grow">
+              </div>
+              <div class="form-group">
+                <label for="plantingRangeInput">Planting Range</label>
+                <input type="text" class="form-control" id="plantingRangeInput" placeholder="What is the planting range?">
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Check this box if crop will require irrigation
+                </label>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add-crop">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    <script src="./js/crop.js"></script>
+    <script src="./js/cropscript.js"></script>
   </body>
 </html>

@@ -16,8 +16,10 @@ module.exports = function(app) {
   app.get("/api/crops/", function(req, res) {
     db.Crop.findAll({})
       .then(function(dbCrop) {
+        console.log(dbCrop);
         res.json(dbCrop);
-      });
+      })
+      .catch(err => res.json(err));
   });
 
   // Get route for retrieving a single Crop
@@ -29,7 +31,8 @@ module.exports = function(app) {
     })
       .then(function(dbCrop) {
         res.json(dbCrop);
-      });
+      })
+      .catch(err => res.json(err));
   });
 
   // POST route for saving a new Crop
@@ -43,7 +46,8 @@ module.exports = function(app) {
     })
       .then(function(dbCrop) {
         res.json(dbCrop);
-      });
+      })
+      .catch(err => res.json(err));
   });
 
   // DELETE route for deleting crops
@@ -55,7 +59,8 @@ module.exports = function(app) {
     })
       .then(function(dbCrop) {
         res.json(dbCrop);
-      });
+      })
+      .catch(err => res.json(err));
   });
 
   // PUT route for updating crops
@@ -68,6 +73,7 @@ module.exports = function(app) {
       })
       .then(function(dbCrop) {
         res.json(dbCrop);
-      });
+      })
+      .catch(err => res.json(err));
   });
 };

@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Farmanger</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://kit.fontawesome.com/43102f6d14.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="./css/style.css" rel="stylesheet">
+  </head>
+    <nav class="navbar sticky-top navbar-dark">
+        <a class="navbar-brand font-weight-bold" href="index.html"><i class="fas fa-tractor"></i> Farmanger</a>
+        <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
+            <div class="btn-group" role="group">
+              <button type="button" class="btn btn-secondary" id="field-page">Manage Fields</button>
+              <button type="button" class="btn btn-secondary" id="crop-page">Manage Crops</button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container" id="field-container">
+      <div class="card-columns">
+        <div class="card">
+          <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
+          <div class="card-body">
+            <div class="card-header">Field name here</div>
+            <p class="card-text">Crop type: "data from database here</p>
+            <p class="card-text">Acreage: "data from database here"</p>
+            <p class="card-text">Notes:</p>
+            <div class="md-form">
+              <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+            </div>
+              <div class="card-footer">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Add crop</button>
+                  <button type="button" class="btn btn-secondary">Delete crop</button>
+                  <button type="button" class="btn btn-secondary">Update</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
+          <div class="card-body">
+            <div class="card-header">Field name here</div>
+            <p class="card-text">Crop type: "data from database here</p>
+            <p class="card-text">Acreage: "data from database here"</p>
+            <p class="card-text">Notes:</p>
+            <div class="md-form">
+              <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+            </div>
+              <div class="card-footer">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Add crop</button>
+                  <button type="button" class="btn btn-secondary">Delete crop</button>
+                  <button type="button" class="btn btn-secondary">Update</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
+          <div class="card-body">
+            <div class="card-header">Field name here</div>
+            <p class="card-text">Crop type: "data from database here</p>
+            <p class="card-text">Acreage: "data from database here"</p>
+            <p class="card-text">Notes:</p>
+            <div class="md-form">
+              <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+            </div>
+              <div class="card-footer">
+                <div class="btn-group" role="group" aria-label="Basic example">
+                  <button type="button" class="btn btn-secondary">Add crop</button>
+                  <button type="button" class="btn btn-secondary">Delete crop</button>
+                  <button type="button" class="btn btn-secondary">Update</button>
+                </div>
+              </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    
+    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#fieldModal">Add a field</button>
+
+    <!-- Modal to add crops-->
+
+    <div class="modal fade" id="fieldModal" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title">Add a field</div>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="cropNameInput">Field Name</label>
+                <input type="text" class="form-control" id="cropNameInput" placeholder="Enter a field name here">
+              </div>
+              <div class="form-group">
+                <label for="growTimeInput">Acreage</label>
+                <input type="text" class="form-control" id="growTimeInput" placeholder="How many acres will the field be comprised of?">
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="add-field">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="./js/fieldscript.js"></script>
+  </body>
+</html>

@@ -1,7 +1,7 @@
 use farm_db;
 
-INSERT INTO crop 
-(cropName, growTime, irrigation, season)
+INSERT INTO Crop
+(cropName, growTime, irrigation, season,)
 VALUES
 ("Bush Beans", 60, false, "April 15th - May 1st"),
 ("Beets", 60, false, "April 15th - July 1st"),
@@ -16,7 +16,7 @@ VALUES
 ("Sweet Corn", 60, false, "May 10th - July 1st"),
 ("Tomatoes", 45, false, "May 15th - June 1st");
 
-INSERT INTO field (fieldName, acreage, note)
+INSERT INTO Field (fieldName, acreage, note)
 VALUES
 ("Northwest Field", 1, "Soil has been tilled"),
 ("Eastern Field", 3, "Fallow for growing season 2020");
