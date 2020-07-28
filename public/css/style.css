@@ -1,7 +1,7 @@
 body {
     background-image: url(../assets/farm_background_grass.jpg);
     background-color: #cccccc;
-    height: 750px;
+    height: 1500px;
     background-position: center;
     background-repeat: no-repeat; 
     background-size: cover;
@@ -11,10 +11,21 @@ body {
     background-color: green;
 }
 
-table tr td, table tr th{
+.table {
+    background-color: goldenrod;
+}
+/* table tr td, table tr th{
     background-color: rgba(48, 49, 0, 0.3) !important;
+} */
+
+td {
+    justify-content: center;
 }
 
 .container {
     padding-top: 50px;
+}
+
+footer {
+    background-color: green;
 }

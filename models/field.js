@@ -13,10 +13,9 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         allowNull: true
       }
-      // timestamps: false
     });
     Field.associate = function(models) {
-      // We're saying that a Field should belong to an Crop
+      // We're saying that a Field should belong to a Crop
       // A Field can't be created without an Crop due to the foreign key constraint
       Field.belongsTo(models.Crop, {
         foreignKey: {

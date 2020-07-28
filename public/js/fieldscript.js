@@ -3,7 +3,8 @@ $(document).ready(function() {
     // jquery references for inputs for adding fields
     const fieldNameInput = $("#field-name");
     const fieldAcreage = $("#acre-input");
-    const fieldNote = $("#note-input")
+    const fieldNote = $("#note-input");
+    const cropToGrow = $("#crop-input");
 
     // listener for displaying fields button
     $(document).on("click", "#display-fields", getFields);
@@ -15,7 +16,7 @@ $(document).ready(function() {
     // listener for delete field
     $(document).on("click", ".delete-field", handleDeleteField);
     // listener for update field
-    $(document).on("click", ".update-field", handleUpdateField);
+    // $(document).on("click", ".update-field", handleUpdateField);
 
     // goes to the crop page
     function getCropPage() {
@@ -28,10 +29,9 @@ $(document).ready(function() {
         window.location.href = "./fields.html"
     }
 
-
     function createFieldCard(fieldData) {
-        console.log(fieldData);
-        $(".card-columns").append(`<div class="card" id="${fieldData.id}>
+        // console.log(fieldData);
+        $(".card-columns").append(`<div class="card">
         <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
         <div class="card-body">
           <div class="card-header">${fieldData.fieldName}</div>
@@ -41,11 +41,9 @@ $(document).ready(function() {
           <div class="md-form">
             <textarea id="form10" class="md-textarea form-control" rows="3">${fieldData.note}</textarea>
           </div>
-            <div class="card-footer">
+            <div class="card-footer" id="${fieldData.id}>
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary" id="add-crop-to-field">Add crop</button>
-                <button type="button" class="btn btn-secondary" id="delete-crop-from-field">Delete crop</button>
-                <button type="button" class="btn btn-secondary" id="update-field">Update</button>
+                <button type="button" class="btn btn-danger delete-field">Delete</button>
               </div>
             </div>
         </div>
@@ -69,7 +67,8 @@ $(document).ready(function() {
         upsertField({
             fieldName: fieldNameInput.val(),
             acreage: fieldAcreage.val(),
-            note: fieldNote.val()
+            note: fieldNote.val(),
+            Crop: cropToGrow.val()
         });
     }
 
@@ -80,26 +79,29 @@ $(document).ready(function() {
 
     // function for deleting field data from table & database
     function handleDeleteField() {
-        let fieldCardData = $(this).closest("tr").attr("id");
-        let id = fieldCardData;
-        // console.log(fieldCardData);
+        let fieldCardData = $(this).parent("div").parent("div").attr("id");
+        // let id = fieldCardData.id;
+        console.log(fieldCardData);
         $.ajax({
             method: "DELETE",
             url: "/api/fields/" + id
         })
         // need to be able to clear the whole table before "re-getting" the table
-        .then(getFields);
+        // .then(getFieldPage);
     }
 
-    // TODO: function for updating field data
-    function handleUpdateField(){
-        let fieldCardData = $(this).closest("tr").attr("id");
-        let id = fieldCardData;
+    // // TODO: function for updating field data
+    // // function handleUpdateField(){
+    //     let fieldCardData = $(this).closest("tr").attr("id");
+    //     let id = fieldCardData;
 
-        console.log(fieldCardData);
-        $.ajax({
-            method: "PUT",
-            url: "/api/fields/" + id
-        })
-    }
+    //     console.log(fieldCardData);
+    //     $.ajax({
+    //         method: "PUT",
+    //         url: "/api/fields/" + id
+    //     })
+    //     .then(function() {
+    //             window.location.href = "/field";
+    //         })
+    // }
 });

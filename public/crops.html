@@ -25,13 +25,13 @@
       <table class="table table-hover">
         <thead>
           <tr>
-            <button type="button" class="btn btn-secondary" id="display-crops">Display the Crop list</button>          
+            <button type="button" class="btn btn-secondary" id="display-crops">Display the Crop list</button>
+            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>              
           </tr>
           <tr>
             <th>Crop Name</th>
             <th>Grow Time</th>
             <th>Planting Range</th>
-            <th>Irrigation Required</th>
             <th>Update</th>
             <th>Delete</th>
           </tr>
@@ -40,7 +40,7 @@
       </table>    
     </div>
 
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>          
+     
 
 
     <!-- Modal to add crops-->
@@ -83,11 +83,9 @@
       </div>
     </div>
 
-    <footer class="footer fixed-bottom">
-      <div class="container text-center">© 2020 Copyright:
+    <footer class="footer fixed-bottom text-center">© 2020 Copyright:
         <a href="https://github.com/abdi198"> Abdi</a> &
         <a href="https://github.com/pj-brown"> Patrick</a>
-      </div>
     </footer>
     
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>

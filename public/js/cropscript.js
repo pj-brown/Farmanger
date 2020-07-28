@@ -1,11 +1,13 @@
 $(document).ready(function() {
 
-    // jquery references for inputs for adding crop
+    // jquery references for inputs for adding crop from modal inputs
     const cropNameInput = $("#crop-name");
     const growTimeInput = $("#grow-time");
     const plantingRangeInput = $("#planting-range");
-    const cropContainer = $("#crop-container");
-    const cropBody = $("#crop-body");
+    // jquery references for inputs for updating crop from modal inputs
+    // const cropNameUpdate = $("#crop-name-update");
+    // const growTimeUpdate = $("#grow-time-update");
+    // const plantingRangeUpdate = $("#planting-range-update");
 
     // listener for displaying crops button
     $(document).on("click", "#display-crops", getCrops);
@@ -17,7 +19,7 @@ $(document).ready(function() {
     // listener for delete crop
     $(document).on("click", ".delete-crop", handleDeleteCrop);
     // listener for update crop
-    $(document).on("click", ".update-crop", handleUpdateCrop);
+    // $(document).on("click", ".update-crop", handleUpdateCrop);
 
     // goes to the crop page
     function getCropPage() {
@@ -29,10 +31,18 @@ $(document).ready(function() {
         window.location.href = "./fields.html"
     }
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
     // function to create html table data for existing crops 
     function createCropRow(cropData) {
         // console.log(cropData);
-        $("#crop-body").append(`<tr id="${cropData.id}"><td>${cropData.cropName}</td><td>${cropData.growTime}</td><td>${cropData.season}</td><td>${cropData.irrigation}</td><td><button type="button" class="btn btn-info update-crop">Update</button></td><td><button type="button" class="btn btn-danger delete-crop">Delete</button></td></tr>`)
+        $("#crop-body").append(`<tr id="${cropData.id}">
+        <td><input type="text" class="form-control" id="crop-name-update" placeholder="${cropData.cropName}"></td>
+        <td><input type="text" class="form-control" id="grow-time-update" placeholder="${cropData.growTime}"></td>
+        <td><input type="text" class="form-control"  id="planting-range-update" placeholder="${cropData.season}"></td>
+        <td><button type="button" class="btn btn-info update-crop">Update</button></td>
+        <td><button type="button" class="btn btn-danger delete-crop">Delete</button></td>
+        </tr>`)
     }
 
     // function gets crop from database
@@ -72,18 +82,27 @@ $(document).ready(function() {
             url: "/api/crops/" + id
         })
         // need to be able to clear the whole table before "re-getting" the table
-        .then(getCrops);
+        .then(getCropPage);
     }
 
     // TODO: function for updating crop data
-    function handleUpdateCrop(){
-        let cropRowData = $(this).closest("tr").attr("id");
-        let id = cropRowData;
+    // function handleUpdateCrop(){
+    //     let cropRowData = $(this).closest("tr").attr("id");
+    //     let id = cropRowData;
+    //     console.log(cropRowData);
+    //     upsertCrop({
+    //         cropName: cropNameUpdate.val(),
+    //         growTime: growTimeUpdate.val(),
+    //         irrigation: false,
+    //         season: plantingRangeUpdate.val()
+    //     });
+    //     $.ajax({
+    //         method: "PUT",
+    //         url: "/api/crops/" + id
+    //     })
+    // }
+    // const cropNameUpdate = $("#crop-name-update");
+    // const growTimeUpdate = $("#grow-time-update");
+    // const plantingRangeUpdate = $("#planting-range-update");
 
-        console.log(cropRowData);
-        $.ajax({
-            method: "PUT",
-            url: "/api/crops/" + id
-        })
-    }
 });
