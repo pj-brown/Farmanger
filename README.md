@@ -20,7 +20,7 @@ Something about installing thins app
 ## License
 This application is using the MIT license.
 ## Contributing
-Please refer to the <a href='#questions'>Questions</a> section for any questions related to contributing.
+This app was created by [Abdi](https://github.com/abdi198) and [Patrick](https://github.com/pj-brown)
 ## Tests
 Open the directory containing `index.js` and run `node index.js` in your Node terminal.
 ## Questions
