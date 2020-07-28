@@ -7,7 +7,8 @@
 
 // Requiring our Todo model
 var db = require("../models");
-var cropSeed = require('../db/crops-seed.json');
+// lazy crop seeding
+// var cropSeed = require('../db/crops-seed.json');
 
 // Routes
 // =============================================================
