@@ -7,15 +7,16 @@
 
 // Requiring our Todo model
 var db = require("../models");
+var cropSeed = require('../db/crops-seed.json');
 
 // Routes
 // =============================================================
-module.exports = function(app) {
+module.exports = function (app) {
 
   // GET route for getting all crops
-  app.get("/api/crops/", function(req, res) {
+  app.get("/api/crops/", function (req, res) {
     db.Crop.findAll({})
-      .then(function(dbCrop) {
+      .then(function (dbCrop) {
         console.log(dbCrop);
         res.json(dbCrop);
       })
@@ -23,20 +24,20 @@ module.exports = function(app) {
   });
 
   // Get route for retrieving a single Crop
-  app.get("/api/crops/:id", function(req, res) {
+  app.get("/api/crops/:id", function (req, res) {
     db.Crop.findOne({
       where: {
         id: req.params.id
       }
     })
-      .then(function(dbCrop) {
+      .then(function (dbCrop) {
         res.json(dbCrop);
       })
       .catch(err => res.json(err));
   });
 
   // POST route for saving a new Crop
-  app.post("/api/crops", function(req, res) {
+  app.post("/api/crops", function (req, res) {
     console.log(req.body);
     db.Crop.create({
       cropName: req.body.cropName,
@@ -44,34 +45,34 @@ module.exports = function(app) {
       irrigation: req.body.irrigation,
       season: req.body.season
     })
-      .then(function(dbCrop) {
+      .then(function (dbCrop) {
         res.json(dbCrop);
       })
       .catch(err => res.json(err));
   });
 
   // DELETE route for deleting crops
-  app.delete("/api/crops/:id", function(req, res) {
+  app.delete("/api/crops/:id", function (req, res) {
     db.Crop.destroy({
       where: {
         id: req.params.id
       }
     })
-      .then(function(dbCrop) {
+      .then(function (dbCrop) {
         res.json(dbCrop);
       })
       .catch(err => res.json(err));
   });
 
   // PUT route for updating crops
-  app.put("/api/crops/:id", function(req, res) {
+  app.put("/api/crops/:id", function (req, res) {
     db.Crop.update(req.body,
       {
         where: {
           id: req.params.id
         }
       })
-      .then(function(dbCrop) {
+      .then(function (dbCrop) {
         res.json(dbCrop);
       })
       .catch(err => res.json(err));

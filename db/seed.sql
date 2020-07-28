@@ -1,7 +1,7 @@
 use farm_db;
 
 INSERT INTO Crop
-(cropName, growTime, irrigation, season,)
+(cropName, growTime, irrigation, season)
 VALUES
 ("Bush Beans", 60, false, "April 15th - May 1st"),
 ("Beets", 60, false, "April 15th - July 1st"),

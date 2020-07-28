@@ -1,16 +1,16 @@
 $(document).ready(function() {
 
     // jquery references for inputs for adding crop
-    let cropNameInput = $("#cropNameInput");
-    let growTimeInput = $("#growTimeInput");
-    let plantingRangeInput = $("#plantingRangeInput");
-    let cropContainer = $("#crop-container");
-    let cropBody = $("#crop-body")
+    const cropNameInput = $("#crop-name");
+    const growTimeInput = $("#grow-time");
+    const plantingRangeInput = $("#planting-range");
+    const cropContainer = $("#crop-container");
+    const cropBody = $("#crop-body");
 
-
-    // on lick listeners for save buttons in modals
-    // $(document).on("click", "#add-crop", addCrop);
-    // $(document).on("click", "#add-field", addField);
+    // listener for displaying crops button
+    $(document).on("click", "#display-crops", getCrops);
+    // on lick listeners for save buttons in crop modal
+    $(document).on("click", "#add-crop", addCropHandle);
     // listeners for page direct (manage crop/field)
     $(document).on("click", "#crop-page", getCropPage);
     $(document).on("click", "#field-page", getFieldPage);
@@ -18,7 +18,6 @@ $(document).ready(function() {
     // goes to the crop page
     function getCropPage() {
         window.location.href = "./crops.html";
-        getCrops();
     }
 
     // goes to the field page
@@ -28,35 +27,39 @@ $(document).ready(function() {
 // ----------------------------------------------------------------------------------------------------------------------------------------------------------
     // getting existing crops
     
-    // TODO: function for creating a new table row for crops
-    // function createCropRow(cropData) {
+    function createCropRow(cropData) {
+        console.log(cropData);
+        $("#crop-body").append(`<tr><td>${cropData.cropName}</td><td>${cropData.growTime}</td><td>${cropData.season}</td><td>${cropData.irrigation}</td><td><button type="button" class="btn btn-secondary">X</button></td><td><button type="button" class="btn btn-secondary">X</button></td></tr>`)
+    }
 
-    // }
-
-    // TODO: function to get existing crops
-    function getCrops(data) {
+    function getCrops() {
         $.get("/api/crops", function(data) {
-            console.log(data);
             let rowsToAdd = [];
             for (let i = 0; i < data.length; i++) {
-                console.log(data[i]);
                 rowsToAdd.push(createCropRow(data[i]));                
             }
             console.log(rowsToAdd);
-            renderCropList(rowsToAdd);
-            cropNameInput.val("");
-            growTimeInput.val(""); // this is an iteger...
-            plantingRangeInput.val("");
-
         });
     }
 
-    // // TODO: function to add crop
-    // function addCrop () {
+    // TODO: function to add crop
+    function addCropHandle (event) {
+        event.preventDefault();
+        upsertCrop({
+            cropName: cropNameInput.val(),
+            growTime: growTimeInput.val(),
+            irrigation: false,
+            season: plantingRangeInput.val()
+        });
+    }
 
-    // }
-    // // TODO: function to add field
-    // function addField () {
-
-    // }
+    function upsertCrop(cropData) {
+        $.post("/api/crops", cropData);
+    }
 });
+
+const cropNameInput = $("#crop-name");
+const growTimeInput = $("#grow-time");
+const plantingRangeInput = $("#planting-range");
+const cropContainer = $("#crop-container");
+const cropBody = $("#crop-body");
