@@ -2,9 +2,12 @@ $(document).ready(function() {
 
     // jquery references for inputs for adding fields
     const fieldNameInput = $("#field-name");
-    const fieldAcreage = $("#acres");
+    const fieldAcreage = $("#acre-input");
+    const fieldNote = $("#note-input")
 
-    // on lick listeners for save buttons in modals
+    // listener for displaying fields button
+    $(document).on("click", "#display-fields", getFields);
+    // on lick listeners for save buttons in field modal
     $(document).on("click", "#add-field", handleAddField);
     // listeners for page direct (manage crop/field)
     $(document).on("click", "#crop-page", getCropPage);
@@ -27,22 +30,22 @@ $(document).ready(function() {
 
 
     function createFieldCard(fieldData) {
-        // console.log(fieldData);
-        $(".card-columns").append(`<div class="card">
+        console.log(fieldData);
+        $(".card-columns").append(`<div class="card" id="${fieldData.id}>
         <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
         <div class="card-body">
           <div class="card-header">${fieldData.fieldName}</div>
-          <p class="card-text">Crop type: "data from database here</p>
-          <p class="card-text">${fieldData.acreage}</p>
+          <p class="card-text">Crop type: ${fieldData.Crop}</p>
+          <p class="card-text">Acres: ${fieldData.acreage}</p>
           <p class="card-text">Notes:</p>
           <div class="md-form">
-            <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
+            <textarea id="form10" class="md-textarea form-control" rows="3">${fieldData.note}</textarea>
           </div>
             <div class="card-footer">
               <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-secondary">Add crop</button>
-                <button type="button" class="btn btn-secondary">Delete crop</button>
-                <button type="button" class="btn btn-secondary">Update</button>
+                <button type="button" class="btn btn-secondary" id="add-crop-to-field">Add crop</button>
+                <button type="button" class="btn btn-secondary" id="delete-crop-from-field">Delete crop</button>
+                <button type="button" class="btn btn-secondary" id="update-field">Update</button>
               </div>
             </div>
         </div>
@@ -65,7 +68,8 @@ $(document).ready(function() {
         event.preventDefault();
         upsertField({
             fieldName: fieldNameInput.val(),
-            acreage: fieldAcreage.val()
+            acreage: fieldAcreage.val(),
+            note: fieldNote.val()
         });
     }
 

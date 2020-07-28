@@ -20,48 +20,10 @@
         </div>
     </nav>
 
-    <div class="container" id="field-container">
+    <div class="container">
+      <button type="button" class="btn btn-secondary" id="display-fields">Show me my fields</button>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#fieldModal">Add a field</button>        
       <div class="card-columns">
-        <div class="card">
-          <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="card-header">Field name here</div>
-            <p class="card-text">Crop type: "data from database here</p>
-            <p class="card-text">Acreage: "data from database here"</p>
-            <p class="card-text">Notes:</p>
-            <div class="md-form">
-              <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
-            </div>
-              <div class="card-footer">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary">Add crop</button>
-                  <button type="button" class="btn btn-secondary">Delete crop</button>
-                  <button type="button" class="btn btn-secondary">Update</button>
-                </div>
-              </div>
-          </div>
-        </div>
-
-        <div class="card">
-          <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
-          <div class="card-body">
-            <div class="card-header">Field name here</div>
-            <p class="card-text">Crop type: "data from database here</p>
-            <p class="card-text">Acreage: "data from database here"</p>
-            <p class="card-text">Notes:</p>
-            <div class="md-form">
-              <textarea id="form10" class="md-textarea form-control" rows="3"></textarea>
-            </div>
-              <div class="card-footer">
-                <div class="btn-group" role="group" aria-label="Basic example">
-                  <button type="button" class="btn btn-secondary">Add crop</button>
-                  <button type="button" class="btn btn-secondary">Delete crop</button>
-                  <button type="button" class="btn btn-secondary">Update</button>
-                </div>
-              </div>
-          </div>
-        </div>
-
         <div class="card">
           <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
           <div class="card-body">
@@ -85,7 +47,7 @@
       </div>
     </div>
     
-    <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#fieldModal">Add a field</button>
+
 
     <!-- Modal to add crops-->
 
@@ -105,8 +67,12 @@
                 <input type="text" class="form-control" id="field-name" placeholder="Enter a field name here">
               </div>
               <div class="form-group">
-                <label for="acres">Acreage</label>
-                <input type="text" class="form-control" id="acres" placeholder="How many acres will the field be comprised of?">
+                <label for="acre-input">Acreage</label>
+                <input type="text" class="form-control" id="acre-input" placeholder="How many acres will the field be comprised of?">
+              </div>
+              <div class="form-group">
+                <label for="note-input">Notes</label>
+                <input type="text" class="form-control" id="note-input" placeholder="Add any notes here">
               </div>
             </form>
           </div>
