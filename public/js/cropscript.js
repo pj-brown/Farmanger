@@ -10,14 +10,14 @@ $(document).ready(function() {
     // listener for displaying crops button
     $(document).on("click", "#display-crops", getCrops);
     // on lick listeners for save buttons in crop modal
-    $(document).on("click", "#add-crop", addCropHandle);
+    $(document).on("click", "#add-crop", handleAddCrop);
     // listeners for page direct (manage crop/field)
     $(document).on("click", "#crop-page", getCropPage);
     $(document).on("click", "#field-page", getFieldPage);
     // listener for delete crop
     $(document).on("click", ".delete-crop", handleDeleteCrop);
     // listener for update crop
-    // $(document).on("click", ".update-crop", handleUpdateCrop);
+    $(document).on("click", ".update-crop", handleUpdateCrop);
 
     // goes to the crop page
     function getCropPage() {
@@ -47,7 +47,7 @@ $(document).ready(function() {
     }
 
     // function for handling saving crop
-    function addCropHandle (event) {
+    function handleAddCrop (event) {
         event.preventDefault();
         upsertCrop({
             cropName: cropNameInput.val(),
@@ -62,18 +62,28 @@ $(document).ready(function() {
         $.post("/api/crops", cropData);
     }
 
-    // TODO: function for updating crop data
+    // function for deleting crop data from table & database
     function handleDeleteCrop() {
         let cropRowData = $(this).closest("tr").attr("id");
         let id = cropRowData;
-        console.log(cropRowData);
+        // console.log(cropRowData);
         $.ajax({
             method: "DELETE",
             url: "/api/crops/" + id
         })
-        // need to be able to clear the whole table
+        // need to be able to clear the whole table before "re-getting" the table
         .then(getCrops);
     }
 
-    // TODO: function for deleting crop data
+    // TODO: function for updating crop data
+    function handleUpdateCrop(){
+        let cropRowData = $(this).closest("tr").attr("id");
+        let id = cropRowData;
+
+        console.log(cropRowData);
+        $.ajax({
+            method: "PUT",
+            url: "/api/crops/" + id
+        })
+    }
 });
