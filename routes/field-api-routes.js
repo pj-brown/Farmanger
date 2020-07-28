@@ -31,10 +31,30 @@ module.exports = function(app) {
   });
 
   app.post("/api/fields", function(req, res) {
-    db.Field.create(req.body)
-    .then(function(dbField) {
-      res.json(dbField);
+    // inerst the crop
+    db.Crop.findOne({where: { cropName: req.body.Crop }})
+    .then(dbCrop => {
+      let fieldInsert = {
+        fieldName: req.body.fieldName,
+        acreage: req.body.acreage,
+        note: req.body.note
+      }
+      console.log(dbCrop) // grab id
+      fieldInsert.CropId = dbCrop.id
+      return fieldInsert;
+    }).then(fieldInsert => {
+      db.Field.create(fieldInsert).then(dbField => {
+        res.json(dbField)
+      })
     })
+    // either sucessfully insert corn or corn exists and we'll be turned away
+    // if sucessful we learn what the id is of the crop
+    // if turned away, do a find on crop database to find corn which could return id of
+    // 
+    // db.Field.create(req.body)
+    // .then(function(dbField) {
+    //   res.json(dbField);
+    // })
     .catch(err => res.json(err));
   });
 

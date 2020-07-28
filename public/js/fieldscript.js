@@ -30,18 +30,18 @@ $(document).ready(function() {
     }
 
     function createFieldCard(fieldData) {
-        // console.log(fieldData);
+        console.log(fieldData);
         $(".card-columns").append(`<div class="card">
         <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
         <div class="card-body">
           <div class="card-header">${fieldData.fieldName}</div>
-          <p class="card-text">Crop type: ${fieldData.Crop}</p>
+          <p class="card-text">Crop type: ${fieldData.Crop.cropName}</p>
           <p class="card-text">Acres: ${fieldData.acreage}</p>
           <p class="card-text">Notes:</p>
           <div class="md-form">
             <textarea id="form10" class="md-textarea form-control" rows="3">${fieldData.note}</textarea>
           </div>
-            <div class="card-footer" id="${fieldData.id}>
+            <div class="card-footer" id="${fieldData.id}">
               <div class="btn-group" role="group" aria-label="Basic example">
                 <button type="button" class="btn btn-danger delete-field">Delete</button>
               </div>
@@ -74,13 +74,17 @@ $(document).ready(function() {
 
     // function for adding the field to the database
     function upsertField(fieldData) {
-        $.post("/api/fields", fieldData);
+        $.post("/api/fields", fieldData).then(fieldSuccess => {
+            console.log("yay you did it");
+            //append fieldSuccess and data to the screen or we could clear everything off screen and run the get fields
+            location.reload();
+        })
     }
 
     // function for deleting field data from table & database
     function handleDeleteField() {
         let fieldCardData = $(this).parent("div").parent("div").attr("id");
-        // let id = fieldCardData.id;
+        let id = fieldCardData;
         console.log(fieldCardData);
         $.ajax({
             method: "DELETE",
