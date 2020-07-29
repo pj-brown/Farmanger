@@ -7,14 +7,10 @@ Welcome to Farmanger! This is a simple database app that allows you to track the
 
 ## Table of Contents
 * <a href='#installation'>Installation</a>
-* <a href='#usage'>Usage</a>
-* <a href='#license'>License</a>
+
 * <a href='#contribution'>Contribution</a>
-* <a href='#tests'>Tests</a>
+
 * <a href='#questions'>Questions</a>
-## Installation
-Something about installing thins app
-## Usage
 
 ## License
 This application is using the MIT license.
