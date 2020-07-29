@@ -1,33 +1,30 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Farmanger</title>
+    <title>Farmanger - Manage Crops</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <script src="https://kit.fontawesome.com/43102f6d14.js" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="./css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar sticky-top navbar-dark">
       <a class="navbar-brand font-weight-bold" href="index.html"><i class="fas fa-tractor"></i> Farmanger</a>
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
           <div class="btn-group" role="group">
-            <button type="button" class="btn btn-secondary" id="field-page">Manage Fields</button>
-            <button type="button" class="btn btn-secondary" id="crop-page">Manage Crops</button>
+            <button type="button" class="btn btn-success border-warning" id="field-page">Manage Fields</button>
+            <button type="button" class="btn btn-success border-warning" id="crop-page">Manage Crops</button>
           </div>
       </div>
   </nav>
     
     <div class="container" id="crop-container">
+      <button type="button" class="btn btn-secondary" id="display-crops">Display the Crop list</button>
+      <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>   
       <table class="table table-hover">
-        <thead>
-          <tr>
-            <button type="button" class="btn btn-secondary" id="display-crops">Display the Crop list</button>
-            <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#cropModal">Add a crop</button>              
-          </tr>
+        <thead>           
           <tr>
             <th>Crop Name</th>
             <th>Grow Time</th>

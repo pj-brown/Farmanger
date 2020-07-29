@@ -37,9 +37,9 @@ $(document).ready(function() {
     function createCropRow(cropData) {
         // console.log(cropData);
         $("#crop-body").append(`<tr id="${cropData.id}">
-        <td><input type="text" class="form-control" id="crop-name-update" placeholder="${cropData.cropName}"></td>
-        <td><input type="text" class="form-control" id="grow-time-update" placeholder="${cropData.growTime}"></td>
-        <td><input type="text" class="form-control"  id="planting-range-update" placeholder="${cropData.season}"></td>
+        <td><input type="text" class="form-control crop-name-update" placeholder="${cropData.cropName}"></td>
+        <td><input type="text" class="form-control grow-time-update" placeholder="${cropData.growTime}"></td>
+        <td><input type="text" class="form-control planting-range-update" placeholder="${cropData.season}"></td>
         <td><button type="button" class="btn btn-info update-crop">Update</button></td>
         <td><button type="button" class="btn btn-danger delete-crop">Delete</button></td>
         </tr>`)

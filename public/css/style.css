@@ -9,6 +9,12 @@ body {
 
 .navbar {
     background-color: green;
+    border-bottom: 2px solid goldenrod;
+}
+
+.nav-btn {
+    border: .5px;
+    border-color: goldenrod;
 }
 
 .table {
@@ -28,4 +34,17 @@ td {
 
 footer {
     background-color: green;
+    height: 50px;
+    line-height: 50px;
 }
+
+a:link {
+    color: goldenrod;
+    }
+    a:visited {
+    color: goldenrod;
+    }
+    a:hover {
+    color: #ff3300;
+    }
+
