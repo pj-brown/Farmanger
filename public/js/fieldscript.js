@@ -34,21 +34,19 @@ $(document).ready(function() {
         $(".card-columns").append(`<div class="card">
         <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
         <div class="card-body">
-          <div class="card-header">${fieldData.fieldName}</div>
-          <p class="card-text">Crop type: ${fieldData.Crop.cropName}</p>
-          <p class="card-text">Acres: ${fieldData.acreage}</p>
-          <p class="card-text">Notes:</p>
-          <div class="md-form">
-            <textarea id="form10" class="md-textarea form-control" rows="3">${fieldData.note}</textarea>
-          </div>
-            <div class="card-footer" id="${fieldData.id}">
-              <div class="btn-group" role="group" aria-label="Basic example">
-                <button type="button" class="btn btn-danger delete-field">Delete</button>
-              </div>
+            <div class="card-header">${fieldData.fieldName}</div>
+               <p class="card-text">Crop type: ${fieldData.Crop.cropName}</p>
+                <p class="card-text">Acres: ${fieldData.acreage}</p>
+                <p class="card-text">Notes:</p>
+            <div class="md-form">
+                <textarea id="form10" class="md-textarea form-control" rows="3">${fieldData.note}</textarea>
             </div>
-        </div>
-      </div>`)
-    }
+            <div class="card-footer" id="${fieldData.id}">
+                <button type="button" class="btn btn-danger btn-block delete-field">Delete</button>
+            </div>
+            </div>
+        </div>`
+        )}
 
     // function gets field from database
     function getFields() {

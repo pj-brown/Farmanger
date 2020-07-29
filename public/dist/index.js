@@ -1,0 +1,1 @@
+$(document).ready(function(){$(document).on("click","#crop-page",function(){window.location.href="./crops.html",getCrops()}),$(document).on("click","#field-page",function(){window.location.href="./fields.html"})});
