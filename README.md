@@ -6,22 +6,18 @@ Welcome to Farmanger! This is a simple database app that allows you to track the
 #### [Link to video demo](https://drive.google.com/link for demo here)
 
 ## Table of Contents
-* <a href='#installation'>Installation</a>
-* <a href='#usage'>Usage</a>
 * <a href='#license'>License</a>
-* <a href='#contribution'>Contribution</a>
-* <a href='#tests'>Tests</a>
+
+* <a href='#contributors'>Contributors</a>
+
 * <a href='#questions'>Questions</a>
-## Installation
-Something about installing thins app
-## Usage
 
 ## License
-This application is using the MIT license.
-## Contributing
+This application is using the [MIT license](https://choosealicense.com/licenses/mit/).
+
+## Contributors
 This app was created by [Abdi](https://github.com/abdi198) and [Patrick](https://github.com/pj-brown)
-## Tests
-Open the directory containing `index.js` and run `node index.js` in your Node terminal.
+
 ## Questions
   For any questions, please contact me using one of the following links:
 
