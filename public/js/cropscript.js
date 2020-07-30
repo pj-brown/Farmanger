@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $(document).ready(getCrops);
+
     // jquery references for inputs for adding crop from modal inputs
     const cropNameInput = $("#crop-name");
     const growTimeInput = $("#grow-time");

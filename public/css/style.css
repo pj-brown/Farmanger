@@ -1,5 +1,5 @@
 body {
-    background-image: url(../assets/farm_background_grass.jpg);
+    background-image: url(../assets/farm_background_grass.webp);
     background-color: #cccccc;
     height: 1500px;
     background-position: center;
@@ -12,17 +12,18 @@ body {
     border-bottom: 2px solid goldenrod;
 }
 
-.nav-btn {
+.nav-btn, .add-btn {
     border: .5px;
     border-color: goldenrod;
+}
+
+#crop-container, .table {
+    border-radius: 10px;
 }
 
 .table {
     background-color: goldenrod;
 }
-/* table tr td, table tr th{
-    background-color: rgba(48, 49, 0, 0.3) !important;
-} */
 
 td {
     justify-content: center;
@@ -34,8 +35,9 @@ td {
 
 footer {
     background-color: green;
-    height: 50px;
-    line-height: 50px;
+    height: 40px;
+    line-height: 40px;
+    border-top: 2px solid goldenrod;
 }
 
 a:link {

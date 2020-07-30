@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $(document).ready(getFields);
+
     // jquery references for inputs for adding fields
     const fieldNameInput = $("#field-name");
     const fieldAcreage = $("#acre-input");
@@ -32,7 +34,7 @@ $(document).ready(function() {
     function createFieldCard(fieldData) {
         console.log(fieldData);
         $(".card-columns").append(`<div class="card">
-        <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
+        <img class="card-img-top" src="./assets/field.webp" alt="Card image cap">
         <div class="card-body">
             <div class="card-header">${fieldData.fieldName}</div>
                <p class="card-text">Crop type: ${fieldData.Crop.cropName}</p>
@@ -72,8 +74,8 @@ $(document).ready(function() {
 
     // function for adding the field to the database
     function upsertField(fieldData) {
-        $.post("/api/fields", fieldData).then(fieldSuccess => {
-            console.log("yay you did it");
+        $.post("/api/fields", fieldData)
+        .then(fieldSuccess => {
             //append fieldSuccess and data to the screen or we could clear everything off screen and run the get fields
             location.reload();
         })
@@ -81,15 +83,14 @@ $(document).ready(function() {
 
     // function for deleting field data from table & database
     function handleDeleteField() {
-        let fieldCardData = $(this).parent("div").parent("div").attr("id");
+        let fieldCardData = $(this).parent("div").attr("id");
         let id = fieldCardData;
         console.log(fieldCardData);
         $.ajax({
             method: "DELETE",
             url: "/api/fields/" + id
         })
-        // need to be able to clear the whole table before "re-getting" the table
-        // .then(getFieldPage);
+        .then(getFieldPage);
     }
 
     // // TODO: function for updating field data
