@@ -14,16 +14,24 @@
       <a class="navbar-brand font-weight-bold" href="index.html"><i class="fas fa-tractor"></i> Farmanger</a>
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
           <div class="btn-group" role="group">
+            <button class="btn btn-success border-warning" type="button" data-toggle="collapse" data-target="#background-music" aria-expanded="false" aria-controls="background-music">Music</button>
             <button type="button" class="btn btn-success border-warning" id="field-page">Manage Fields</button>
             <button type="button" class="btn btn-success border-warning" id="crop-page">Manage Crops</button>
           </div>
       </div>
-  </nav>
+    </nav>
 
-    <div class="container">
-      <button type="button" class="btn btn-success border-warning" data-toggle="modal" data-target="#fieldModal">Add a field</button>        
-      <div class="card-columns"></div>
-    </div>
+  <div class="collapse" id="background-music">
+    <div class="card card-body music" style="background-image: url(../assets/music_background.webp)">
+      <audio controls>
+        <source src="./assets/music_david_gwyn_jones_looking_back_over_the_hill_instrumental.mp3" type="audio/mp3">
+      </audio>    </div>
+  </div>
+
+  <div class="container">
+    <button type="button" class="btn btn-success border-warning" data-toggle="modal" data-target="#fieldModal">Add a field</button>        
+    <div class="card-columns"></div>
+  </div>
     
 
 
