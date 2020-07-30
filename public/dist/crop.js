@@ -1,0 +1,7 @@
+$(document).ready(function(){function a(){window.location.href="./crops.html"}function b(a){$("#crop-body").append(`<tr id="${a.id}">
+        <td><input type="text" class="form-control crop-name-update" placeholder="${a.cropName}"></td>
+        <td><input type="text" class="form-control grow-time-update" placeholder="${a.growTime}"></td>
+        <td><input type="text" class="form-control planting-range-update" placeholder="${a.season}"></td>
+        <td><button type="button" class="btn btn-info update-crop">Update</button></td>
+        <td><button type="button" class="btn btn-danger delete-crop">Delete</button></td>
+        </tr>`)}function c(){$.get("/api/crops",function(a){let c=[];for(let d=0;d<a.length;d++)c.push(b(a[d]))})}function d(a){$.post("/api/crops",a)}$(document).ready(c);const e=$("#crop-name"),f=$("#grow-time"),g=$("#planting-range");$(document).on("click","#display-crops",c),$(document).on("click","#add-crop",function(a){a.preventDefault(),d({cropName:e.val(),growTime:f.val(),irrigation:!1,season:g.val()})}),$(document).on("click","#crop-page",a),$(document).on("click","#field-page",function(){window.location.href="./fields.html"}),$(document).on("click",".delete-crop",function(){let b=$(this).closest("tr").attr("id");$.ajax({method:"DELETE",url:"/api/crops/"+b}).then(a)})});
