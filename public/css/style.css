@@ -69,3 +69,13 @@ audio {
     margin: auto;
     font-weight: bold;
 }
+
+ul {
+    margin: auto;
+    position: relative;
+    top: 20px;
+}
+
+li {
+    margin: 5px;
+}
