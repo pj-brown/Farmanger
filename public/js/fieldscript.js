@@ -32,7 +32,7 @@ $(document).ready(function() {
     function createFieldCard(fieldData) {
         console.log(fieldData);
         $(".card-columns").append(`<div class="card">
-        <img class="card-img-top" src="./assets/field.jpg" alt="Card image cap">
+        <img class="card-img-top" src="./assets/field.webp" alt="Card image cap">
         <div class="card-body">
             <div class="card-header">${fieldData.fieldName}</div>
                <p class="card-text">Crop type: ${fieldData.Crop.cropName}</p>
