@@ -63,3 +63,9 @@ audio {
 .nav-pills .nav-link.active {
     background-color: green!important;
 }
+
+.tab-pane {
+    width: 85%;
+    margin: auto;
+    font-weight: bold;
+}
