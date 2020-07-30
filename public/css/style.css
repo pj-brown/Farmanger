@@ -86,7 +86,11 @@ li {
     font-size: larger;
 }
 
-h5 {
+.artist {
     color: white;
+    text-align: center;
+}
+
+tr {
     text-align: center;
 }
