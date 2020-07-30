@@ -14,35 +14,41 @@
       <a class="navbar-brand font-weight-bold" href="index.html"><i class="fas fa-tractor"></i> Farmanger</a>
       <div class="btn-group" role="group" aria-label="Button group with nested dropdown">    
           <div class="btn-group" role="group">
+            <button class="btn btn-success border-warning" type="button" data-toggle="collapse" data-target="#background-music" aria-expanded="false" aria-controls="background-music">Music</button>
             <button type="button" class="btn btn-success border-warning" id="field-page">Manage Fields</button>
             <button type="button" class="btn btn-success border-warning" id="crop-page">Manage Crops</button>
           </div>
       </div>
-  </nav>
+    </nav>
 
-    <div class="container card-group">
-      <div class="card"><ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  <div class="collapse" id="background-music">
+    <div class="card card-body music" style="background-image: url(../assets/music_background.webp)">
+      <audio controls>
+        <source src="./assets/music_david_gwyn_jones_looking_back_over_the_hill_instrumental.mp3" type="audio/mp3">
+      </audio>    </div>
+  </div>
+
+  <div class="container card-group">
+    <div class="card">
+      <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab"
-            aria-controls="pills-home" aria-selected="true">Farmanger</a>
+          <a class="nav-link active" id="pills-farmanger-tab" data-toggle="pill" href="#pills-farmanger" role="tab" aria-controls="pills-farmanger" aria-selected="true">Farmanger</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab"
-            aria-controls="pills-profile" aria-selected="false">CSA</a>
+          <a class="nav-link" id="pills-csa-tab" data-toggle="pill" href="#pills-csa" role="tab" aria-controls="pills-csa" aria-selected="false">CSA</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab"
-            aria-controls="pills-contact" aria-selected="false">How To</a>
+          <a class="nav-link" id="pills-how-to-tab" data-toggle="pill" href="#pills-how-to" role="tab" aria-controls="pills-how-to" aria-selected="false">How To</a>
         </li>
       </ul>
       <div class="tab-content pt-2 pl-1" id="pills-tabContent">
-        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+        <div class="tab-pane fade show active" id="pills-farmanger" role="tabpanel" aria-labelledby="pills-farmanger-tab">
           Welcome to Farmanger, partner! This is a fun little app to record notes about where and what you're planting! Great for backyard farmers and those running a CSA farm!
         </div>
-        <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+        <div class="tab-pane fade" id="pills-csa" role="tabpanel" aria-labelledby="pills-csa-tab">
           CSA stands for Community-Supported Agriculture - where folks are able to move away from large-scale farming operations (that often times exist thousands of miles away!) to a more local, sustainable option. Watch the video below for a little more insight.
         </div>
-        <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+        <div class="tab-pane fade" id="pills-how-to" role="tabpanel" aria-labelledby="pills-how-to-tab">
           To use this app, click on the 'Manage Crops' button to view, add, and update crops you're interested in. Click on the 'Manage Fields' button to view, add, and update your farming plots!
         </div>
         <br>
@@ -52,10 +58,11 @@
       </div>
     </div>
   </div>
+
   <footer class="footer fixed-bottom text-center">© 2020 Copyright:
     <a href="https://github.com/abdi198"> Abdi</a> &
     <a href="https://github.com/pj-brown"> Patrick</a>
-</footer>
+  </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

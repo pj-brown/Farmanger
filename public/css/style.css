@@ -50,3 +50,16 @@ a:link {
     color: #ff3300;
     }
 
+audio {
+    display:block;
+    margin: auto;
+}
+
+.nav-link {
+    background-color: goldenrod;
+    color: white!important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: green!important;
+}
