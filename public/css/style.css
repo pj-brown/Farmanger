@@ -79,3 +79,8 @@ ul {
 li {
     margin: 5px;
 }
+
+.card-header {
+    font-weight: bold;
+    text-align: center;
+}
