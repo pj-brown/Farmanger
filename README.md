@@ -3,6 +3,8 @@
 ## Description
 Welcome to Farmanger! This is a simple database app that allows you to track the crops you're growing and the land you're growing them on!
 
+Try it out here: [Farmanger](https://whispering-ocean-01229.herokuapp.com/)
+
 #### [Link to video demo](https://drive.google.com/link for demo here)
 
 ## Table of Contents
