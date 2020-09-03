@@ -1,4 +1,4 @@
-# README Generator
+# FARMANGER
 [![MIT](https://img.shields.io/badge/license-MIT-brightgreen)](https://choosealicense.com/licenses/mit/)
 ## Description
 Welcome to Farmanger! This is a simple database app that allows you to track the crops you're growing and the land you're growing them on!
